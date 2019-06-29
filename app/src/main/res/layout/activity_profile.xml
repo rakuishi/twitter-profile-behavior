@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".ProfileActivity">
+
+    <com.rakuishi.behavior.PullToRefreshCoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/appbar_height">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsingToolbarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/appbar_height"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:titleEnabled="false">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/appbar_height"
+                    android:background="@color/colorPrimary"
+                    app:layout_collapseMode="parallax"
+                    tools:ignore="ContentDescription" />
+
+                <com.rakuishi.behavior.PullToRefreshView
+                    android:id="@+id/pullToRefreshView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/toolbar_height"
+                    android:theme="@style/CollapsingToolbar"
+                    app:layout_collapseMode="pin" />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <!-- dummy contents -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextAppearance.MaterialComponents.Caption"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:gravity="bottom"
+                    android:padding="12dp"
+                    android:text="250dp"
+                    android:textColor="#8899A6"
+                    tools:ignore="HardcodedText,RtlHardcoded" />
+
+                <TextView
+                    style="@style/TextAppearance.MaterialComponents.Caption"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:gravity="bottom"
+                    android:padding="12dp"
+                    android:text="500dp"
+                    android:textColor="#8899A6"
+                    tools:ignore="HardcodedText,RtlHardcoded" />
+
+                <TextView
+                    style="@style/TextAppearance.MaterialComponents.Caption"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:gravity="bottom"
+                    android:padding="12dp"
+                    android:text="750dp"
+                    android:textColor="#8899A6"
+                    tools:ignore="HardcodedText,RtlHardcoded" />
+
+                <TextView
+                    style="@style/TextAppearance.MaterialComponents.Caption"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:gravity="bottom"
+                    android:padding="12dp"
+                    android:text="1000dp"
+                    android:textColor="#8899A6"
+                    tools:ignore="HardcodedText,RtlHardcoded" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <ImageView
+            android:id="@+id/avatarImageView"
+            android:layout_width="@dimen/avatar_max_size"
+            android:layout_height="@dimen/avatar_max_size"
+            android:src="@drawable/avatar"
+            tools:ignore="ContentDescription"
+            tools:layout_marginStart="12dp"
+            tools:layout_marginTop="86dp" />
+
+    </com.rakuishi.behavior.PullToRefreshCoordinatorLayout>
+
+</RelativeLayout>
